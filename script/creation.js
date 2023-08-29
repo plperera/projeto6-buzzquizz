@@ -61,9 +61,9 @@ function createBasicInfo(e) {
 function checkBasicInfo(basicInfo) {
     const title = basicInfo.title;
 
-    if (title.length < 20 || title.length > 65)
+    if (title.length < 5 || title.length > 65)
         return false;
-    else if(Number(basicInfo.nquestions) < 3 || isNaN(basicInfo.nquestions))
+    else if(Number(basicInfo.nquestions) < 2 || isNaN(basicInfo.nquestions))
         return false;
     else if (Number(basicInfo.nlevels) < 2 || isNaN(basicInfo.nlevels))
         return false;
@@ -183,7 +183,7 @@ function createQuestions(e) {
 function checkQuestions(createdQuestions) {
     for (let i = 0; i < createdQuestions.length; i++) {
         
-        const isTitleShort = createdQuestions[i].title.length < 20
+        const isTitleShort = createdQuestions[i].title.length < 10
         if (isTitleShort) return false;
         
         const isColorValid = !checkColor(createdQuestions[i].color)
